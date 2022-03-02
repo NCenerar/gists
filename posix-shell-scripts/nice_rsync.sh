@@ -2,7 +2,6 @@
 set -e
 
 NBRETRY=9
-
 while [ $# -gt 0 ] ; do
   case "$1" in
     --nb-retry) NBRETRY=$2 ; shift 2 ;;

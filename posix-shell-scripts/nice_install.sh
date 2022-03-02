@@ -53,5 +53,5 @@ exit 0                    # only from url
 
 printf "Fetching ${BRANCH} NiCe commands last update
 "
-curl -fsSL "${URL}/${BRANCH}/posix-shell-scripts/nice_install.sh" | sh -
+curl -fsSL "${URL}/${BRANCH}/posix-shell-scripts/nice_install.sh" | sh -s - --branch "${BRANCH}"
 exit 0

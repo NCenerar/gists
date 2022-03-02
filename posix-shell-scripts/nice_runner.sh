@@ -1,6 +1,8 @@
 #!/bin/sh -u
 set -e
 
+URL="https://raw.githubusercontent.com/NCenerar/gists"
+
 BRANCH="main"
 FOLDER="posix-shell-scripts"
 SCRIPT="nice_install.sh"
@@ -26,6 +28,6 @@ fi 1>&2
 printf "Running ${BRANCH}/${FOLDER}/${SCRIPT}
 "
 
-curl -fsSL https://raw.githubusercontent.com/NCenerar/gists/${BRANCH}/${FOLDER}/${SCRIPT} | sh -
+curl -fsSL "${URL}/${BRANCH}/${FOLDER}/${SCRIPT}" | sh -
 
 exit 0

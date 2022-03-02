@@ -12,12 +12,14 @@ while [ $# -gt 0 ] ; do
 done
 
 if [ ${#} -lt 2 ] ; then
-  printf "$0 [--nb-retry n=9] [--] [rsync options] SRC DST
+  printf "$0 [--nb-retry n] [--] [rsync options] SRC DST
+    --nb-retry  n   Number of retry in case of failure. (default to 9)
+
   rsync options are system specific.
   Usefull rsync commands:
-    -r    recursive
-    -a    archive
-    -aHAX archive and keep attributes
+    -r              recursive
+    -a              archive
+    -aHAX           archive and keep attributes
 "
   exit 1
 fi 1>&2

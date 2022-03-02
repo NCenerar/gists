@@ -40,18 +40,20 @@ _import() {
   fi
 }
 
+UPDATE=0
+UPDATE=1
+if [ ${UPDATE} -eq 1 ] ; then
+  printf "Updating ${BRANCH} NiCe commands
+  "
+  curl -fsSL "${URL}/${BRANCH}/posix-shell-scripts/nice_install.sh" \
+  | grep -vF 'UPDATE=1' | sh -s - --branch "${BRANCH}"
+  exit 0
+fi
+
 printf "Installing ${BRANCH} NiCe commands into ${HOME}/bin
 "
-_update nice_runner.sh    # only from url
-_update nice_rsync.sh     # only from url
-_update nice_install.sh   # only from url
-grep -vF '# only from url' "${HOME}/bin/nice_install.sh" > "${HOME}/bin/nice_install2.sh" # only from url
-rm -f "${HOME}/bin/nice_install.sh" # only from url
-chmod +x "${HOME}/bin/nice_install2.sh" # only from url
-mv -f "${HOME}/bin/nice_install2.sh" "${HOME}/bin/nice_installer.sh" # only from url
-exit 0                    # only from url
+_update nice_install.sh
+_update nice_runner.sh
+_update nice_rsync.sh
 
-printf "Fetching ${BRANCH} NiCe commands last update
-"
-curl -fsSL "${URL}/${BRANCH}/posix-shell-scripts/nice_install.sh" | sh -s - --branch "${BRANCH}"
 exit 0

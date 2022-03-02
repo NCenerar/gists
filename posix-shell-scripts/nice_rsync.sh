@@ -15,7 +15,7 @@ if [ ${#} -lt 2 ] ; then
     --nb-retry  n   Number of retry in case of failure. (default to 9)
 
   rsync options are system specific.
-  Usefull rsync commands:
+  Usefull rsync options:
     -r              recursive
     -a              archive
     -aHAX           archive and keep attributes

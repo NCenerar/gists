@@ -55,5 +55,6 @@ printf "Installing ${BRANCH} NiCe commands into ${HOME}/bin
 _update nice_install.sh
 _update nice_runner.sh
 _update nice_rsync.sh
+_update nice_move.sh
 
 exit 0

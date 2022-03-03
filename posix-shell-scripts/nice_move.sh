@@ -24,7 +24,14 @@ if [ ${#} -lt 2 ] ; then
 fi 1>&2
 
 SUFFIX="$(date +~%s~)"
-mkdir -p "${2}"
+(
+  while [ ${#} -gt 2 ] ; do
+    shift
+  done
+  mkdir -p "${2}"
+)
+echo "$(dirname "${0}")/nice_rsync.sh" --nb-retry ${NBRETRY} \
+  -- --checksum --archive --backup --suffix=${SUFFIX} "${@}"
 "$(dirname "${0}")/nice_rsync.sh" --nb-retry ${NBRETRY} \
   -- --checksum --archive --backup --suffix=${SUFFIX} "${@}"
 while [ ${#} -gt 2 ] ; do

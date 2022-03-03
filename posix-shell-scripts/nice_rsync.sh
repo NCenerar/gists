@@ -25,9 +25,9 @@ fi 1>&2
 
 SUCCESS=1
 while [ ${SUCCESS} -ne 0 ] && [ ${NBRETRY} -ge 0 ] ; do
-  (   rsync    -vh --progress "${@}" \
+      rsync    -vh --progress "${@}" \
   &&  rsync -c -vh --progress "${@}" \
-  &&  SUCCESS=0 ) || NBRETRY=$(( ${NBRETRY} - 1 ))
+  &&  SUCCESS=0 || NBRETRY=$(( ${NBRETRY} - 1 ))
 done
 
 exit ${SUCCESS}

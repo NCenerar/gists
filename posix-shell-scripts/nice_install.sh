@@ -56,5 +56,6 @@ _update nice_install.sh
 _update nice_runner.sh
 _update nice_rsync.sh
 _update nice_move.sh
+_update nice_git_credentials.sh
 
 exit 0

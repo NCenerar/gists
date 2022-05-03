@@ -45,6 +45,7 @@ else
 name:    ${GIT_NAME}
 email:   ${GIT_MAIL}
 ssh key: ${HOME}/.ssh/${GIT_MAIL}
+         $(cat "${HOME}/.ssh/${GIT_MAIL}.pub")
 "
 fi 1>&2
 
